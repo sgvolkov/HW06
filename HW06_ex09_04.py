@@ -18,10 +18,22 @@
 
 # Body
 
+#1
+
+def uses_only(word, letters):
+    for letter in word:
+        if letter not in letters:
+            return False
+        else:
+            return True
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+    with open('words.txt', 'r') as f:
+        for line in f:
+            word = line.strip()
+            if uses_only(word, 'acefhlo'):
+                print word
 
 if __name__ == '__main__':
     main()
